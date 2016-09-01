@@ -1,0 +1,43 @@
+<ion-side-menus>
+  <!-- Center content -->
+  <ion-side-menu-content>
+    <ion-header-bar class="bar-royal">
+      <h1 class="title">任务列表</h1>
+      <!-- New Task button-->
+      <button class="button button-icon" ng-click="newTask()">
+            <i class="icon ion-compose"></i>
+          </button>
+    </ion-header-bar>
+    <ion-content scroll="false">
+      <ion-list>
+        <ion-item on-hold="popupMessageOpthins($index)" rj-hold-active ng-repeat="task in activeProject.tasks" ng-bind="task.title"></ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu-content>
+  <script id="new-task.html" type="text/ng-template">
+        <div class="modal">
+      
+          <!-- Modal header bar -->
+          <ion-header-bar class="bar-secondary">
+            <h1 class="title">新任务</h1>
+            <button class="button button-clear button-positive" ng-click="closeNewTask()">取消</button>
+          </ion-header-bar>
+      
+          <!-- Modal content area -->
+          <ion-content>
+      
+            <form ng-submit="createTask(task)">
+              <div class="list">
+                <label class="item item-input">
+                  <input type="text" placeholder="说说你想做些什么?" ng-model="task.title">
+                </label>
+              </div>
+              <div class="padding">
+                <button type="submit" class="button button-block button-positive">创建任务</button>
+              </div>
+            </form>
+      
+          </ion-content>    
+        </div>
+      </script>
+</ion-side-menus>

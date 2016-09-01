@@ -28,35 +28,33 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers'])
       .state('app', {
         url: '/app',
         abstract: true,
-        templateUrl: 'templates/menu.html',
-        // controller: 'AppCtrl'
-      })
-      .state('app.about', {
-        url: '/about',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/about.html'
-          }
-        }
+        templateUrl: 'templates/menu.html'
       })
       .state('app.news', {
         url: '/news',
         views: {
-          'menuContent': {
-            templateUrl: 'templates/news.html',
-            controller: 'searchCtrl'
+          'appNews': {
+            templateUrl: 'templates/weixinpopular/news.html',
+            controller: 'newsCtrl'
           }
         }
       })
-      .state('app.detail', {
-        url: '/detail',
+      .state('app.todo', {
+        url: '/todo',
         views: {
-          'menuContent': {
-            templateUrl: 'templates/detail.html',
-            // controller:'searchCtrl'
+          'appTodo': {
+            templateUrl: 'templates/todo/todo.html',
+            controller: 'todoCtrl'
           }
         }
       })
-    // if none of the above states are matched, use this as the fallback
+      .state('app.about', {
+        url: '/about',
+        views: {
+          'appAbout': {
+            templateUrl: 'templates/about.html'
+          }
+        }
+      })
     $urlRouterProvider.otherwise('/app/news');
   });
