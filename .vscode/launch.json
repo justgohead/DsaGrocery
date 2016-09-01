@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Serve to the browser (ionic serve)",
+            "type": "cordova",
+            "request": "launch",
+            "platform": "serve",
+            "runtimeExecutable": "D:/software/GoogleChromePortable/App/Google Chrome/chrome.exe",
+            "cwd": "${workspaceRoot}",
+            "devServerAddress": "localhost",
+            "sourceMaps": true,
+            "ionicLiveReload": true
+        }
+    ]
+}

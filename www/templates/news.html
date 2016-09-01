@@ -1,0 +1,21 @@
+<ion-view view-title="微信精选">
+  <ion-content class="padding log">
+    <ion-refresher on-refresh="refreshdata()"></ion-refresher>
+    <div class="list li">
+      <div class="list" ng-if="!s.length">
+      </div>
+      <div class="list" ng-init="i=$index+1" ng-repeat="detail in s">
+        <a class="item item-thumbnail-left" >
+          <img ng-src="{{detail.firstImg}}">
+          <h2 class="comment_inner">
+            <font color="#B40431" style="white-space:normal;text-word-break: break-all; word-warp: break-word" title="{{detail.title}}" size="4" ng-bind="detail.title"></font>
+          </h2>
+          <p align="justify">
+            <font size="1" ng-bind="detail.source"></font>
+          </p>
+        </a>
+      </div>
+      <ion-infinite-scroll ng-if="!hasnomore" on-infinite="getdata()" distance="1%">
+      </ion-infinite-scroll>
+  </ion-content>
+</ion-view>
